@@ -1,29 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
+  --primaryTextColor: #ffffff;
+  --secondaryTextColor: #c0c7ca;
+
+  --borderColor: #f1f1f1;
+  --lineColor: #d9d9d9;
+
+  --primaryBackgroundColor: #161b22;
+  --secondaryBackgroundColor: #7400c100;
+  --thirdBackgroundColor: #21262d;
+  --fourthBackgroundColor: #0e004a;
+  --transparentBackgroundColor: rgb(0, 0, 0, 0.6);
+
   --primaryColor: #7e74f1;
   --primaryColorHover: #5d51e8;
-  --lightColor: #fff;
-  --lineColor: #d9d9d9;
-  --backgroundTransparant: rgba(0, 0, 0, 0.6);
-  --backgroundBlack: #000;
+
+  --sectionPadding: 6rem 0;
+  --itemBorderRadius: 0.7rem;
 }
 
+/* General */
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--backgroundBlack);
+  background-color: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor);
 }
 
 p {
   font-size: 1rem; /* 16px */
   line-height: 1.9rem;
-  color: var(--lightColor);
+  color: var(--secondaryTextColor);
 }
 
 span {
-  color: var(--lightColor);
+  color: var(--primaryTextColor);
 }
 
+/* Navigation bar*/
 .navbar {
   height: 80px;
   margin: 20px;
@@ -64,7 +78,7 @@ span {
 
 .login-button {
   background-color: var(--primaryColor);
-  color: var(--lightColor);
+  color: var(--primaryTextColor);
   font-size: 14px;
   padding: 8px 20px;
   border-radius: 50px;
@@ -95,7 +109,7 @@ span {
 
 .nav-link:hover,
 .nav-link:active {
-  color: var(--lightColor);
+  color: var(--primaryTextColor);
 }
 
 @media (min-width: 992px) {
@@ -119,10 +133,11 @@ span {
   }
 }
 
+/* Hero Section */
 .pre-title {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
-  color: var(--lineColor);
+  color: var(--secondaryTextColor);
   position: relative;
   padding-left: 40px;
   width: fit-content;
@@ -165,4 +180,49 @@ span {
 .hero-right {
   display: flex;
   justify-content: center;
+}
+
+/* Services Section */
+#services {
+  background-color: var(--thirdBackgroundColor);
+  padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+  margin: 0 auto;
+}
+
+.services-title {
+  text-align: center;
+}
+
+.service {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--secondaryBackgroundColor);
+  border-radius: var(--itemBorderRadius);
+}
+
+.service h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background-color: var(--secondaryTextColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryColor);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
 }
