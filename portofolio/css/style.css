@@ -1,12 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+:root {
+  --primaryColor: #7e74f1;
+  --primaryColorHover: #5d51e8;
+  --lightColor: #fff;
+  --lineColor: #d9d9d9;
+  --backgroundTransparant: rgba(0, 0, 0, 0.6);
+  --backgroundBlack: #000;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--backgroundBlack);
+}
+
+p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.9rem;
+  color: var(--lightColor);
+}
+
+span {
+  color: var(--lightColor);
+}
+
+.navbar {
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
 .navbar-brand {
   font-weight: 500;
-  color: rgb(37, 107, 247);
+  color: var(--primaryColor);
   font-size: 24px;
+  transition: 0.3s color;
+}
+
+.navbar-brand:hover {
+  color: var(--primaryColorHover);
+}
+
+.offcanvas {
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.offcanvas-header {
+  font-size: 18px;
+}
+
+.offcanvas-title {
+  font-size: 24px;
+  color: var(--primaryColor);
+}
+
+.offcanvas-body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .login-button {
-  background-color: rgb(37, 107, 247);
-  color: #fff;
+  background-color: var(--primaryColor);
+  color: var(--lightColor);
   font-size: 14px;
   padding: 8px 20px;
   border-radius: 50px;
@@ -15,7 +73,7 @@
 }
 
 .login-button:hover {
-  background-color: rgb(0, 56, 169);
+  background-color: var(--primaryColorHover);
 }
 
 .navbar-toggler {
@@ -37,10 +95,10 @@
 
 .nav-link:hover,
 .nav-link:active {
-  color: #000;
+  color: var(--lightColor);
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .nav-link::before {
     content: "";
     position: absolute;
@@ -49,7 +107,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: rgb(37, 107, 247);
+    background-color: var(--primaryColor);
     visibility: hidden;
     transition: 0.3 ease-in-out;
   }
@@ -59,4 +117,52 @@
     width: 100%;
     visibility: visible;
   }
+}
+
+.pre-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--lineColor);
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pre-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--lineColor);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+}
+
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.typed2 {
+  color: var(--primaryColor);
+}
+
+.hero-right img {
+  width: 60%;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
 }

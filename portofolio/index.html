@@ -10,24 +10,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsiveStyle.css" />
     <title>Muhammad Azis | Web Dev</title>
   </head>
   <body>
     <!-- Navbar/header -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand me-auto" href="#">Maetr.</a>
         <div
-          class="offcanvas offcanvas-end"
+          class="offcanvas offcanvas-end text-bg-dark"
           tabindex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
+          style="width: 300px"
         >
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Maetr.</h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
@@ -54,9 +56,9 @@
             </ul>
           </div>
         </div>
-        <a href="#" class="login-button">Login</a>
+        <a href="#" class="login-button">Resume</a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler pe-0"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
@@ -67,7 +69,30 @@
         </button>
       </div>
     </nav>
-    <!-- Hero Secrion -->
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="container">
+      <div class="hero-left">
+        <h3 class="pre-title">My Name is</h3>
+        <h1 class="hero-name">
+          <span class="typed"></span>
+          <span class="typed2" style="display: none">Azis</span>
+        </h1>
+        <p>
+          I am an Informatics student who is very eager to increase my
+          knowledge. I have a special interest in programming, enjoy taking on
+          challenges, and am always ready to learn new things. My ability to
+          adapt quickly in a new environment makes it easy for me to master new
+          concepts.
+        </p>
+      </div>
+      <div class="hero-right">
+        <img src="img/hero.png" alt="Hero Right" />
+      </div>
+    </section>
+
+    <!-- End Hero Section -->
 
     <!-- Portofolio -->
 
@@ -77,5 +102,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
