@@ -1,0 +1,104 @@
+/* Hero Section */
+/* Keyframes untuk animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi untuk elemen hero */
+.hero-left,
+.hero-right {
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Services Section */
+/* Keyframes untuk animasi masuk dari kiri */
+/* Keyframes untuk animasi fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keyframes untuk animasi masuk dari kiri */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframes untuk animasi masuk dari kanan */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animasi untuk elemen services */
+.services .section-title {
+  opacity: 0;
+  will-change: opacity;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.services .service:nth-child(odd) {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.services .service:nth-child(even) {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Portofolio Section */
+/* Keyframes untuk animasi fadeIn */
+/* Animasi zoom in */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animasi rotate in */
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+/* Animasi portofolio */
+.portofolio {
+  animation: zoomIn 1.5s ease, rotateIn 1.5s ease;
+}
