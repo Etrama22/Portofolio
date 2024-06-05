@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsiveStyle.css" />
+    <link rel="stylesheet" href="css/animation.css" />
     <title>Muhammad Azis | Web Dev</title>
   </head>
   <body>
@@ -129,5 +130,20 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactSection = document.querySelector("#contact");
+        const contactForm = document.querySelector(".contact-form");
+        const contactItems = document.querySelectorAll(".contact-item");
+
+        // Tambahkan kelas animasi ke elemen yang sesuai
+        contactSection.classList.add("animate-zoomIn");
+        contactForm.classList.add("animate-fadeIn");
+        contactItems.forEach(function (item, index) {
+          item.style.animationDelay = `${index * 0.01}s`;
+          item.classList.add("animate-slideInLeft");
+        });
+      });
+    </script>
   </body>
 </html>
