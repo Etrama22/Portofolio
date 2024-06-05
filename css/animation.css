@@ -102,3 +102,115 @@
 .portofolio {
   animation: zoomIn 1.5s ease, rotateIn 1.5s ease;
 }
+
+/* Skills Section */
+/* Animasi fade in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animasi slide in dari kiri */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animasi slide in dari kanan */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animasi slide in dari atas */
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tambahkan animasi ke elemen yang sesuai */
+.animate-fadeIn {
+  animation: fadeIn 2s ease;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 3s ease;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 3s ease;
+}
+
+.animate-slideInTop {
+  animation: slideInTop 2s ease;
+}
+
+/* contact animation */
+/* Animasi zoom in */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animasi fade in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animasi slide in dari kiri */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tambahkan animasi ke elemen yang sesuai */
+.animate-zoomIn {
+  animation: zoomIn 2s ease;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 3s ease;
+}
