@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsiveStyle.css" />
+    <link rel="stylesheet" href="css/animation.css" />
     <title>Muhammad Azis | Web Dev</title>
   </head>
   <body>
@@ -102,5 +103,21 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const skillsSection = document.querySelector("#skills");
+        const skillsLeft = document.querySelector(".skills-left");
+        const skillsRight = document.querySelector(".skills-right");
+        const educationItems = document.querySelectorAll(".education");
+
+        // Tambahkan kelas animasi ke elemen yang sesuai
+        skillsSection.classList.add("animate-fadeIn");
+        skillsLeft.classList.add("animate-slideInLeft");
+        skillsRight.classList.add("animate-slideInRight");
+        educationItems.forEach(function (item) {
+          item.classList.add("animate-slideInTop");
+        });
+      });
+    </script>
   </body>
 </html>
