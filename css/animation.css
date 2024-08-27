@@ -18,37 +18,38 @@
 }
 
 /* Services Section */
-/* Keyframes untuk animasi masuk dari kiri */
 /* Keyframes untuk animasi fadeIn */
-@keyframes fadeIn {
+@keyframes fadeInServices {
   from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes untuk animasi masuk dari bawah */
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(50%);
     opacity: 0;
   }
   to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
-/* Keyframes untuk animasi masuk dari kiri */
-@keyframes slideInFromLeft {
+/* Keyframes untuk animasi masuk dari atas */
+@keyframes slideInFromTop {
   from {
-    transform: translateX(-100%);
+    transform: translateY(-50%);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Keyframes untuk animasi masuk dari kanan */
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -57,19 +58,81 @@
 .services .section-title {
   opacity: 0;
   will-change: opacity;
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeInServices 1s ease-out forwards;
 }
 
-.services .service:nth-child(odd) {
+.services .service {
   opacity: 0;
   will-change: transform, opacity;
-  animation: slideInFromLeft 1s ease-out forwards;
+  animation: slideInFromBottom 1s ease-out forwards;
 }
 
 .services .service:nth-child(even) {
-  opacity: 0;
-  will-change: transform, opacity;
-  animation: slideInFromRight 1s ease-out forwards;
+  animation: slideInFromTop 1s ease-out forwards;
+}
+
+/* Skills Section */
+/* Animasi fade in */
+@keyframes fadeInSkills {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animasi slide in dari kiri */
+@keyframes slideInLeftSkills {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animasi slide in dari kanan */
+@keyframes slideInRightSkills {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animasi slide in dari atas */
+@keyframes slideInTopSkills {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tambahkan animasi ke elemen yang sesuai */
+.animate-fadeInSkills {
+  animation: fadeInSkills 2s ease;
+}
+
+.animate-slideInLeftSkills {
+  animation: slideInLeftSkills 3s ease;
+}
+
+.animate-slideInRightSkills {
+  animation: slideInRightSkills 3s ease;
+}
+
+.animate-slideInTopSkills {
+  animation: slideInTopSkills 2s ease;
 }
 
 /* Portofolio Section */
@@ -86,26 +149,14 @@
   }
 }
 
-/* Animasi rotate in */
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotate(-360deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-  }
-}
-
 /* Animasi portofolio */
 .portofolio {
-  animation: zoomIn 1.5s ease, rotateIn 1.5s ease;
+  animation: zoomIn 1.5s ease;
 }
 
 /* Skills Section */
 /* Animasi fade in */
-@keyframes fadeIn {
+@keyframes fadeInSkills {
   0% {
     opacity: 0;
   }
@@ -114,35 +165,23 @@
   }
 }
 
-/* Animasi slide in dari kiri */
-@keyframes slideInLeft {
+/* Animasi scale in */
+@keyframes scaleInSkills {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: scale(0.5);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
 }
 
-/* Animasi slide in dari kanan */
-@keyframes slideInRight {
+/* Animasi slide in dari bawah */
+@keyframes slideInFromBottomSkills {
   0% {
     opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animasi slide in dari atas */
-@keyframes slideInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -150,21 +189,33 @@
   }
 }
 
+/* Animasi rotate in */
+@keyframes rotateInSkills {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
 /* Tambahkan animasi ke elemen yang sesuai */
 .animate-fadeIn {
-  animation: fadeIn 2s ease;
+  animation: fadeInSkills 1.5s ease-out forwards;
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 3s ease;
+.animate-scaleIn {
+  animation: scaleInSkills 2s ease-out forwards;
 }
 
-.animate-slideInRight {
-  animation: slideInRight 3s ease;
+.animate-slideInBottom {
+  animation: slideInFromBottomSkills 2s ease-out forwards;
 }
 
-.animate-slideInTop {
-  animation: slideInTop 2s ease;
+.animate-rotateIn {
+  animation: rotateInSkills 1.5s ease-out forwards;
 }
 
 /* contact animation */

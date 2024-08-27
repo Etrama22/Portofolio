@@ -1,4 +1,5 @@
-function loadContent(url, elementId) {
+// Navbar Function
+function loadContent(url, elementId, callback) {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
@@ -6,6 +7,9 @@ function loadContent(url, elementId) {
       const element = document.getElementById(elementId);
       if (element) {
         element.innerHTML = xhr.responseText;
+        if (callback) {
+          callback();
+        }
       } else {
         console.error(`Element with ID ${elementId} not found.`);
       }
@@ -14,36 +18,28 @@ function loadContent(url, elementId) {
   xhr.send();
 }
 
-window.onload = function () {
-  loadContent("navbar.html", "navbar-placeholder");
-  loadContent("footer.html", "footer-placeholder");
-};
-
 // Function to add 'active' class to the current page link in the navigation
 function setActivePage() {
-  // Get the current URL path
-  var path = window.location.pathname;
-  // Get the filename from the URL path
-  var page = path.split("/").pop();
+  console.log("setActivePage dipanggil");
+  const url = new URL(window.location.href);
+  const activePage = url.pathname.replace(/^\//, ""); // hilangkan awalan /
+  console.log("activePage:", activePage);
 
-  // Get all navigation links
-  var navLinks = document.querySelectorAll(".navbar-nav .nav-item .nav-link");
+  var navLinks = document.querySelectorAll(
+    ".offcanvas-body .navbar-nav .nav-item .nav-link"
+  );
+  console.log("navLinks:", navLinks);
 
-  // Loop through each navigation link
-  navLinks.forEach(function (link) {
-    // Get the href attribute of the link
-    var href = link.getAttribute("href");
-
-    // Check if the link's href matches the current page
-    if (href === page || (href === "" && page === "index.html")) {
-      // Remove 'active' class from any previously active links
-      var activeLinks = document.querySelectorAll(".nav-link .active");
-      activeLinks.forEach(function (activeLink) {
-        activeLink.classList.remove("active");
-      });
-
-      // Add 'active' class to the parent <li> of the link
-      link.parentNode.classList.add("active");
+  navLinks.forEach((link) => {
+    console.log("link:", link);
+    if (link.getAttribute("data-section") === activePage) {
+      link.classList.add("active");
+      console.log("link aktif:", link);
     }
   });
 }
+
+window.onload = function () {
+  loadContent("navbar.html", "navbar-placeholder", setActivePage);
+  loadContent("footer.html", "footer-placeholder");
+};

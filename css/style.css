@@ -129,6 +129,10 @@ a {
   position: relative;
 }
 
+.offcanvas-body .navbar-nav .nav-item .nav-link.active {
+  color: var(--primaryTextColor);
+}
+
 .nav-link:hover,
 .nav-link:active {
   color: var(--primaryTextColor);
@@ -353,7 +357,7 @@ a {
   left: -6px;
 }
 
-.skills-list {
+.skills-list-ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 1.5rem;
